@@ -1,0 +1,466 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs20 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 import java.util.PriorityQueue;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 import java.util.Queue;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 public class Package\{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 Package left = null, right = null;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 Package root = null;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 int data;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 boolean visited = false;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 Package(int info)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 data = info;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 public void inorder(Package root)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 if (root != null)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 inorder (root.left);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 System.out.println(root.data);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 inorder (root.right);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 public void preorder(Package root)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 if (root != null)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 System.out.println(root.data);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 preorder(root.left);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 preorder(root.right);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 public void postorder(Package root)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 if (root != null)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 postorder (root.left);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 postorder(root.right);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 System.out.println(root.data);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 public static void breadthFirstSearch(Package root)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 Queue queue = new Queue();\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 System.out.println(root.data);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 Package tmp = root;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 while(!pq.isEmpty())\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 if (tmp.visited == false)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 if(tmp.left != null)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 pq.add(tmp.left);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 System.out.println(tmp.left.data); \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 if (tmp.right != null)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 pq.add(tmp.right);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 System.out.println(tmp.right.data);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 tmp.visited = true;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 if(!pq.isEmpty())\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 tmp = pq.element();\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 System.out.println("top of pq: " + tmp.data); \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \} \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 public void setLeft(Package p)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 this.left = p;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 public void setRight(Package p)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 this.right = p;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 public void setRoot (Package p)\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 this.root = p;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 public Package getLeft()\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 return this.left;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 public Package getRight()\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 return this.right;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 public Package getRoot()\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 return this.root;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 public static void main(String args [])\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 Package p1 = new Package(10);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 Package p2 = new Package(18);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 Package p3 = new Package(121);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 Package p4 = new Package(90);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 Package p5 = new Package(101);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 Package p6 = new Package(181);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 Package p7 = new Package(1211);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 Package p8 = new Package(901);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p1.root = p1;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p1.left = p2;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p1.right = p3;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p2.left = p4;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p2.right = p5;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p3.left = p6;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p3.right = p7;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0\'a0 p4.left = p8;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 // p1.inorder(p1.root);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p1.setRoot(p1);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p1.setLeft(p2);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p1.setRight(p3);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p2.setLeft(p4);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p2.setRight(p5);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p3.setLeft(p6);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p3.setRight(p7);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0p4.setLeft(p8);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 // p1.preorder(p1);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 // p1.postorder(p1);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 \'a0\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0\'a0 breadthFirstSearch(p1);\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 @Override\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 public int compareTo(Object o) \{\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 // TODO Auto-generated method stub\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \'a0\'a0\'a0 return 0;\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \'a0\'a0\'a0 \}\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \}}
